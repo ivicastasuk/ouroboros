@@ -14,7 +14,7 @@
 - 📥 CSV import kontakata pomoću PapaParse biblioteke
 - 🔄 Višestruke sekcije (stranice) unutar aplikacije:
   - Editor šablona
-  - Podesavanja sistema
+  - Podešavanja sistema
   - Izbor i slanje mejlova
   - Upravljanje kontaktima
 
