@@ -119,7 +119,7 @@ Koristi se `electron-builder` za pravljenje `.exe` fajlova.
 
 Apache 2.0
 
-Autor: Ivica C.
+Autor: Ivica S.
 
 ---
 
