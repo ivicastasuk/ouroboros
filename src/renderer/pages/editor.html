@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ouroboros - Editor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Ouroboros Editor</h1>
+
+    <div id="toolbar">
+        <button onclick="addRow()">+ Red</button>
+        <button onclick="addBlock('heading')">+ Naslov</button>
+        <button onclick="addBlock('paragraph')">+ Paragraf</button>
+        <button onclick="addBlock('image')">+ Slika</button>
+        <button onclick="exportHTML()">💾 Izvezi HTML</button>
+    </div>
+  
+    <div class="editor-wrapper">
+        <div id="editor" class="email-canvas"></div>
+        <div id="sidebar">
+            <h3>Podešavanja</h3>
+            <div id="settingsPanel">Klikni na blok za podešavanja</div>
+        </div>
+    </div>
+  
+    <textarea id="htmlOutput" readonly></textarea>
+
+    <div id="rowModal" class="modal hidden">
+        <div class="modal-content">
+            <h3>Kreiraj red</h3>
+            <label>Broj kolona (1-4): <input type="number" id="numColsInput" min="1" max="4" value="2"></label>
+            <div id="widthInputs"></div>
+            <button id="createRowBtn">Kreiraj</button>
+            <button onclick="closeModal()">Otkaži</button>
+        </div>
+    </div>
+
+    <script src="editor.js"></script>
+</body>
+</html>

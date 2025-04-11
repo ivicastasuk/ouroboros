@@ -1,0 +1,16 @@
+{
+  "name": "ouroboros",
+  "version": "1.0.0",
+  "description": "**Ouroboros** je napredna Electron desktop aplikacija za masovno slanje emailova putem SMTP servera. Dizajnirana je za efikasno kreiranje, upravljanje i slanje profesionalnih email kampanja uz integraciju sa MariaDB bazom i podršku za HTML i TXT šablone.",
+  "main": "src/main/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^35.1.5"
+  }
+}

@@ -1,0 +1,120 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 20px;
+}
+
+#toolbar {
+    margin-bottom: 10px;
+}
+
+#toolbar button {
+    margin-right: 10px;
+    padding: 6px 10px;
+}
+
+.editor-wrapper {
+    display: flex;
+    gap: 20px;
+}
+
+.email-canvas {
+    flex: 3;
+    border: 2px dashed #999;
+    padding: 20px;
+    background: white;
+    min-height: 500px;
+}
+
+#sidebar {
+    flex: 1;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background: #f7f7f7;
+    min-height: 500px;
+}
+
+.editor-block {
+    margin-bottom: 15px;
+    cursor: pointer;
+    padding: 5px;
+    transition: outline 0.2s ease;
+}
+
+.editor-block:hover {
+    outline: 2px dashed #3f51b5;
+}
+
+.selected-block {
+    outline: 2px solid #ff5722 !important;
+}
+
+textarea {
+    width: 100%;
+    height: 200px;
+    margin-top: 20px;
+}
+
+#settingsPanel label {
+    display: block;
+    margin-top: 10px;
+}
+
+#settingsPanel button {
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+.editor-row {
+    border: 2px dashed #ccc;
+    /* svetlosiva, tačkasta linija */
+    padding: 10px;
+    background-color: #fff;
+    margin-bottom: 15px;
+}
+
+.editor-column:hover {
+    background-color: #f9f9f9;
+    outline: 2px dashed #9e9e9e;
+}
+
+.editor-column {
+    min-height: 100px;
+    transition: all 0.2s;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    min-width: 300px;
+}
+
+.hidden {
+    display: none;
+}
+
+.email-wrapper {
+    max-width: 800px;
+    /* može se menjati */
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
