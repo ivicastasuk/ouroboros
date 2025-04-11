@@ -98,6 +98,23 @@ Koristi se `electron-builder` za pravljenje `.exe` fajlova.
 
 ---
 
+## ✅ ToDo
+
+- [x] Osnovna struktura Electron aplikacije
+- [ ] Učitavanje konfiguracije iz fajla
+- [ ] Povezivanje sa MariaDB bazom
+- [ ] Slanje mejlova putem SMTP-a
+- [ ] WYSIWYG editor za izradu HTML šablona
+- [ ] Import CSV fajlova pomoću PapaParse
+- [ ] Frontend sekcija za upravljanje kontaktima
+- [ ] UI za izbor i testiranje SMTP/server podešavanja
+- [ ] Napredna validacija mejlova i statusni logovi
+- [ ] Multithread (batch) slanje mejlova sa izveštajima
+- [ ] Integracija sa Google OAuth za slanje preko Gmail API-ja (opciono)
+- [ ] I18n podrška za više jezika
+
+---
+
 ## 📄 Licenca
 
 Apache 2.0
