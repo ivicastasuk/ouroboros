@@ -87,25 +87,25 @@ function selectBlock(block) {
 			<fieldset class="settings-row">
 				<legend>Poravnanje:</legend>
 				<button id="alignLeft" title="Levo" class="square-button">
-					<img src="./icon/text-left.svg" width="20" height="20" alt="Levo" />
+					<img src="../../../public/icon/text-left.svg" width="20" height="20" alt="Levo" />
 				</button>
 				<button id="alignCenter" title="Centar" class="square-button">
-					<img src="./icon/text-center.svg" width="20" height="20" alt="Centar" />
+					<img src="../../../public/icon/text-center.svg" width="20" height="20" alt="Centar" />
 				</button>
 				<button id="alignRight" title="Desno" class="square-button">
-					<img src="./icon/text-right.svg" width="20" height="20" alt="Desno" />
+					<img src="../../../public/icon/text-right.svg" width="20" height="20" alt="Desno" />
 				</button>
 			</fieldset>
 			<fieldset class="settings-row">
 				<legend>Stil fonta:</legend>
 				<button id="boldBtn" title="Podebljano" class="square-button">
-					<img src="./icon/bold.svg" width="20" height="20" alt="Podebljano" />
+					<img src="../../../public/icon/bold.svg" width="20" height="20" alt="Podebljano" />
 				</button>
 				<button id="italicBtn" title="Iskošeno" class="square-button">
-					<img src="./icon/italic.svg" width="20" height="20" alt="Iskošeno" />
+					<img src="../../../public/icon/italic.svg" width="20" height="20" alt="Iskošeno" />
 				</button>
 				<button id="underlineBtn" title="Podvučeno" class="square-button">
-					<img src="./icon/underline.svg" width="20" height="20" alt="Podvučeno" />
+					<img src="../../../public/icon/underline.svg" width="20" height="20" alt="Podvučeno" />
 				</button>
 			</fieldset>
 		`;
@@ -129,76 +129,138 @@ function selectBlock(block) {
 	} else if (block.classList.contains('column')) {
 		const controls = document.createElement('div');
 		controls.innerHTML = `
-        <fieldset class="settings-row">
-			<legend>Pozadina:</legend> 
-			<input type="color" value="${block.style.backgroundColor || '#ffffff'}" id="bgColorControl">
-		</fieldset>
-        <fieldset class="settings-row">
-            <legend>Border podešavanja:</legend>
-			<div class="settings-column">
-				<label>Oblik linije:
-					<select id="borderStyle">
-						<option value="none">None</option>
-						<option value="solid">Solid</option>
-						<option value="dashed">Dashed</option>
-						<option value="dotted">Dotted</option>
-					</select>
-				</label><br/>
-				<label style="display: none;">Debljina (px):
-					<input type="number" id="borderWidth" value="1" min="0" />
-				</label><br/>
-				<label style="display: none;">Boja:
-					<input type="color" id="borderColor" value="#cccccc" />
-				</label><br/>
-				<label style="display: none;">
-					<input type="checkbox" id="borderUniform" checked />
-					Primeni za sve strane
-				</label>
-				<div id="individualBorderSettings" style="display: none; margin-top: 8px;">
-					<label>Gornji: <input type="number" id="borderTopWidth" value="1" min="0" style="width: 50px;" /></label>
-					<label>Boja: <input type="color" id="borderTopColor" value="#cccccc" /></label><br/>
-					<label>Desni: <input type="number" id="borderRightWidth" value="1" min="0" style="width: 50px;" /></label>
-					<label>Boja: <input type="color" id="borderRightColor" value="#cccccc" /></label><br/>
-					<label>Donji: <input type="number" id="borderBottomWidth" value="1" min="0" style="width: 50px;" /></label>
-					<label>Boja: <input type="color" id="borderBottomColor" value="#cccccc" /></label><br/>
-					<label>Levi: <input type="number" id="borderLeftWidth" value="1" min="0" style="width: 50px;" /></label>
-					<label>Boja: <input type="color" id="borderLeftColor" value="#cccccc" /></label><br/>
+			<fieldset class="settings-row">
+				<legend>Pozadina:</legend> 
+				<input type="color" value="${block.style.backgroundColor || '#ffffff'}" id="bgColorControl">
+			</fieldset>
+			<fieldset class="settings-row">
+				<legend>Visina:</legend>
+				<label>Visina (px): <input type="number" id="heightControl" value="${parseInt(block.style.height) || 100}" class="w-50"></label>
+			</fieldset>
+			<fieldset class="settings-row">
+				<legend>Border podešavanja:</legend>
+				<div class="w-full settings-column">
+					<div class="w-full between">
+						<p>Stil linije:</p>
+						<select id="borderStyle" class="w-100">
+							<option value="none">None</option>
+							<option value="solid">Solid</option>
+							<option value="dashed">Dashed</option>
+							<option value="dotted">Dotted</option>
+						</select>
+					</div>					
+					<div class="w-full between" style="display: none;">
+						<p>Debljina (px):</p>
+						<input type="number" id="borderWidth" value="1" min="0" class="w-50">
+					</div>
+					<div class="w-full between" style="display: none;">
+						<p>Boja:</p>
+						<input type="color" id="borderColor" value="#cccccc" class="w-50">
+					</div>
+					<div class="w-full between" style="display: none;">
+						<p>Primeni za sve strane</p>
+						<input type="checkbox" id="borderUniform" checked />
+					</div>
+					<div id="individualBorderSettings" style="display: none; margin-top: 8px;" class="w-full">
+						<fieldset class="settings-column w-full">
+							<legend>Gornja ivica:</legend>
+							<div class="w-full between">
+								<div class="w-half between">
+									<p>Debljina (px):</p>
+									<input type="number" id="borderTopWidth" value="1" min="0" style="width: 50px;" />
+								</div>
+								<div class="w-half between">
+									<p>Boja:</p>
+									<input type="color" id="borderTopColor" value="#cccccc" style="width: 50px;" />
+								</div>
+							</div>
+						</fieldset>
+						<fieldset class="settings-column w-full">
+							<legend>Desna ivica:</legend>
+							<div class="w-full between">
+								<div class="w-half between">
+									<p>Debljina (px):</p>
+									<input type="number" id="borderRightWidth" value="1" min="0" style="width: 50px;" />
+								</div>
+								<div class="w-half between">
+									<p>Boja:</p>
+									<input type="color" id="borderRightColor" value="#cccccc" style="width: 50px;" />
+								</div>
+							</div>
+						</fieldset>
+						<fieldset class="settings-column w-full">
+							<legend>Donja ivica:</legend>
+							<div class="w-full between">
+								<div class="w-half between">
+									<p>Debljina (px):</p>
+									<input type="number" id="borderBottomWidth" value="1" min="0" style="width: 50px;" />
+								</div>
+								<div class="w-half between">
+									<p>Boja:</p>
+									<input type="color" id="borderBottomColor" value="#cccccc" style="width: 50px;" />
+								</div>
+							</div>
+						</fieldset>
+						<fieldset class="settings-column w-full">
+							<legend>Leva ivica:</legend>
+							<div class="w-full between">
+								<div class="w-half between">
+									<p>Debljina (px):</p>
+									<input type="number" id="borderLeftWidth" value="1" min="0" style="width: 50px;" />
+								</div>
+								<div class="w-half between">
+									<p>Boja:</p>
+									<input type="color" id="borderLeftColor" value="#cccccc" style="width: 50px;" />
+								</div>
+							</div>
+						</fieldset>
+					</div>
 				</div>
-        </fieldset>
-        <fieldset class="settings-row">
-			<legend>Poravnanje horizontalno:</legend>
-			<button id="hAlignLeft" title="Levo" class="square-button">
-				<img src="./icon/align-left.svg" width="20" height="20" alt="Levo" />
-			</button>
-			<button id="hAlignCenter" title="Centar" class="square-button">
-				<img src="./icon/align-center.svg" width="20" height="20" alt="Centar" />
-			</button>
-			<button id="hAlignRight" title="Desno" class="square-button">
-				<img src="./icon/align-right.svg" width="20" height="20" alt="Desno" />
-			</button>
-		</fieldset>
-        <fieldset class="settings-row">
-            <legend>Poravnanje vertikalno:</legend>
-            <button id="vAlignTop" title="Gore" class="square-button">
-                <img src="./icon/align-top.svg" width="20" height="20" alt="Gore" />
-            </button>
-            <button id="vAlignMiddle" title="Sredina" class="square-button">
-                <img src="./icon/align-middle.svg" width="20" height="20" alt="Sredina" />
-            </button>
-            <button id="vAlignBottom" title="Dole" class="square-button">
-                <img src="./icon/align-bottom.svg" width="20" height="20" alt="Dole" />
-            </button><br/>
-        </fieldset>
-    `;
+			</fieldset>
+			<fieldset class="settings-row">
+				<legend>Poravnanje horizontalno:</legend>
+				<button id="hAlignLeft" title="Levo" class="square-button">
+					<img src="../../../public/icon/align-left.svg" width="20" height="20" alt="Levo" />
+				</button>
+				<button id="hAlignCenter" title="Centar" class="square-button">
+					<img src="../../../public/icon/align-center.svg" width="20" height="20" alt="Centar" />
+				</button>
+				<button id="hAlignRight" title="Desno" class="square-button">
+					<img src="../../../public/icon/align-right.svg" width="20" height="20" alt="Desno" />
+				</button>
+			</fieldset>
+			<fieldset class="settings-row">
+				<legend>Poravnanje vertikalno:</legend>
+				<button id="vAlignTop" title="Gore" class="square-button">
+					<img src="../../../public/icon/align-top.svg" width="20" height="20" alt="Gore" />
+				</button>
+				<button id="vAlignMiddle" title="Sredina" class="square-button">
+					<img src="../../../public/icon/align-middle.svg" width="20" height="20" alt="Sredina" />
+				</button>
+				<button id="vAlignBottom" title="Dole" class="square-button">
+					<img src="../../../public/icon/align-bottom.svg" width="20" height="20" alt="Dole" />
+				</button><br/>
+			</fieldset>
+		`;
 		panel.appendChild(controls);
 
 		block.style.display = 'flex';
 		block.style.flexDirection = 'column';
 
-		// Background color event
 		document.getElementById('bgColorControl').oninput = (e) => {
 			block.style.backgroundColor = e.target.value;
 			console.log('Background updated', e.target.value);
+		};
+
+		document.getElementById('heightControl').oninput = (e) => {
+			const newHeight = parseInt(e.target.value) || 0;
+			block.style.height = newHeight + 'px';
+			if (newHeight < 100) {
+				block.style.minHeight = '0';
+			} else {
+				block.style.minHeight = '100px';
+			}
+			console.log('Height updated', newHeight);
 		};
 
 		// Border event handlers with debugging information
@@ -273,19 +335,58 @@ function selectBlock(block) {
 	} else if (block.classList.contains('row')) {
 		const controls = document.createElement('div');
 		controls.innerHTML = `
-      <label>Razmak (gap): <input type="number" value="${parseInt(block.style.gap) || 10}" id="gapControl"></label><br/>
-      <label>Pozadina: <input type="color" value="${rgbToHex(getComputedStyle(block).backgroundColor)}" id="rowBgColor"></label><br/>
-      <label>Padding: <input type="number" value="${parseInt(block.style.padding) || 0}" id="rowPadding"></label><br/>
-      <label>Margin Top: <input type="number" value="${parseInt(block.style.marginTop) || 0}" id="rowMarginTop"></label><br/>
-      <label>Margin Bottom: <input type="number" value="${parseInt(block.style.marginBottom) || 0}" id="rowMarginBottom"></label><br/>
-    `;
+			<fieldset class="settings-column">
+				<div class="w-full between">
+					<p>Razmak (px):</p>
+					<input type="number" value="${parseInt(block.style.gap) || 10}" id="gapControl" class="w-50">
+				</div>
+				<div class="w-full between">
+					<p>Boja pozadine:</p>
+					<input type="color" value="${rgbToHex(getComputedStyle(block).backgroundColor)}" id="rowBgColor" class="w-50">
+				</div>
+				<div class="w-full between">
+			</fieldset>
+			<fieldset class="settings-row">
+				<legend>Vertikalno poravnanje:</legend>
+				<button id="rowVAlignTop" title="Gore" class="square-button">
+					<img src="../../../public/icon/align-top.svg" width="20" height="20" alt="Gore" />
+				</button>
+				<button id="rowVAlignMiddle" title="Sredina" class="square-button">
+					<img src="../../../public/icon/align-middle.svg" width="20" height="20" alt="Sredina" />
+				</button>
+				<button id="rowVAlignBottom" title="Dole" class="square-button">
+					<img src="../../../public/icon/align-bottom.svg" width="20" height="20" alt="Dole" />
+				</button>
+			</fieldset>
+		`;
 		panel.appendChild(controls);
 
-		document.getElementById('gapControl').oninput = (e) => block.style.gap = e.target.value + 'px';
-		document.getElementById('rowBgColor').oninput = (e) => block.style.backgroundColor = e.target.value;
-		document.getElementById('rowPadding').oninput = (e) => block.style.padding = e.target.value + 'px';
-		document.getElementById('rowMarginTop').oninput = (e) => block.style.marginTop = e.target.value + 'px';
-		document.getElementById('rowMarginBottom').oninput = (e) => block.style.marginBottom = e.target.value + 'px';
+		document.getElementById('gapControl').oninput = (e) => {
+			block.style.gap = e.target.value + 'px';
+		};
+		document.getElementById('rowBgColor').oninput = (e) => {
+			block.style.backgroundColor = e.target.value;
+		};
+		// document.getElementById('rowPadding').oninput = (e) => {
+		// 	block.style.padding = e.target.value + 'px';
+		// };
+		// document.getElementById('rowMarginTop').oninput = (e) => {
+		// 	block.style.marginTop = e.target.value + 'px';
+		// };
+		// document.getElementById('rowMarginBottom').oninput = (e) => {
+		// 	block.style.marginBottom = e.target.value + 'px';
+		// };
+
+		// Vertical alignment buttons for row:
+		document.getElementById('rowVAlignTop').onclick = () => {
+			block.style.alignItems = 'flex-start';
+		};
+		document.getElementById('rowVAlignMiddle').onclick = () => {
+			block.style.alignItems = 'center';
+		};
+		document.getElementById('rowVAlignBottom').onclick = () => {
+			block.style.alignItems = 'flex-end';
+		};
 	} else if (block.classList.contains('content')) {
 		const controls = document.createElement('div');
 		controls.innerHTML = `
@@ -437,14 +538,20 @@ document.getElementById('createRowBtn').addEventListener('click', () => {
 	row.classList.add('editor-block', 'row');
 	row.style.display = 'flex';
 	row.style.gap = '10px';
-	row.style.border = '2px dashed #ccc';
+	// row.style.border = '2px dashed #ccc';
 	row.style.marginBottom = '15px';
+
+	// Add a click handler on row to select it
+	row.addEventListener('click', (e) => {
+		e.stopPropagation();
+		selectBlock(row);
+	});
 
 	for (let w of widths) {
 		const col = document.createElement('div');
 		col.classList.add('editor-block', 'column');
 		col.style.width = `${w}%`;
-		col.style.border = '1px dashed #ccc';
+		// col.style.border = '1px dashed #ccc';
 		col.style.minHeight = '100px';
 		col.style.padding = '10px';
 		col.style.boxSizing = 'border-box';

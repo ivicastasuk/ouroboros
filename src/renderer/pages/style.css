@@ -47,7 +47,7 @@ body {
 }
 
 .editor-block:hover {
-    outline: 2px dashed #3f51b5;
+    outline: 1px dotted #4ba031;
 }
 
 .selected-block {
@@ -80,7 +80,7 @@ textarea {
 
 .editor-column:hover {
     background-color: #f9f9f9;
-    outline: 2px dashed #9e9e9e;
+    outline: 1px dotted #9e9e9e;
 }
 
 .editor-column {
@@ -159,6 +159,14 @@ textarea {
     width: 100%;
 }
 
+.w-half {
+    width: 50%;
+}
+
 .w-50 {
     width: 50px;
+}
+
+.w-100 {
+    width: 100px;
 }
